@@ -22,6 +22,9 @@ Route::get('hello/{name}',function($name){
 */
 
 Route::get('bands', [BandController::class, 'getAll']);
+Route::post('bands/store', [BandController::class, 'store']);
+Route::get('bands/{id}', [BandController::class, 'getById']);
+Route::get('bands/gender/{gender}', [BandController::class, 'getByIdGender']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
